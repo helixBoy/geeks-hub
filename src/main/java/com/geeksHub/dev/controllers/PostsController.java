@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostsController {
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_ADMINTRAINEE')")
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMINTRAINEE')")
     public String getPosts() {
         return "some posts";
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('user:write')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_ADMINTRAINEE')")
     public String createPost() {
         return "post created";
     }
