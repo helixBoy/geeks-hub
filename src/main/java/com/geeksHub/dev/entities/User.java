@@ -3,8 +3,7 @@ package com.geeksHub.dev.entities;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class User {
 
     @Id
@@ -15,6 +14,7 @@ public class User {
     public String username;
     public String password;
     public String roles;
+
 
 //    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 //    @JoinTable(name = "users_roles",  joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
